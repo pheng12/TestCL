@@ -1,7 +1,7 @@
-CC = gcc
-CFLAGS= -O2
-INCLUDE=/usr/local/gtest/gtest/include
-LIBS=/usr/local/gtest/gtest/lib/libgtest_main.a -ldl -lpthread
+CXX = g++
+CXXFLAGS= -O2 -std=c++11
+INCLUDE=-I /usr/local/gtest/include
+LIBS=-L /usr/local/gtest/lib -lgtest_main -lgtest -ldl -lpthread
 
 all:
-	$(CC) $(CFLAGS) *.c -o test $(INCLUDE) $(LIBS)
+	$(CXX) $(CXXFLAGS) *.cc -o test $(INCLUDE) $(LIBS)
